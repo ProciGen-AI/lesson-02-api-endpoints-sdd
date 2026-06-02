@@ -23,7 +23,7 @@ labels.
 ## Locate the two builds
 
 - **Student build:** `06-prompt-template.py` in the current working directory
-  (the root of this SDD lab repo). If it's not there under that name, take the
+  (the repo root — your working directory). If it's not there under that name, take the
   single `.py` build the student wrote here; if it's ambiguous, ask which is
   theirs. It reads its transcript from `data/call1.txt` in this repo.
 - **Reference build:** *not in this repo* — the answer key lives in the companion

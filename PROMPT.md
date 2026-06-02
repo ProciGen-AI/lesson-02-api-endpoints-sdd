@@ -33,8 +33,8 @@ Inputs:
 
 - `data/call1.txt` — the transcript
 
-Write the script as `06-prompt-template.py` in this folder — the root of your
-SDD lab repo, which is where you'll run it from.
+Write the script as `06-prompt-template.py` in this folder (the repo root) —
+that's where you'll run it from.
 
 <!-- ▢ YOU DECIDE — left out of the prompt on purpose; this is the exercise:
        - which request dimensions become menus, and what options (with examples)
