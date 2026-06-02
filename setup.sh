@@ -185,7 +185,16 @@ if [ -f "${_SCRIPT_DIR}/requirements.txt" ]; then
   fi
   echo "✓ Dependencies installed."
 else
-  echo "⚠ No requirements.txt found at ${_SCRIPT_DIR}. Skipping deps install."
+  # No requirements.txt — this is the minimal BUILD repo (the answer-free clean
+  # slate). Install just the universal Bedrock base so the smoke test can run;
+  # the student's coding agent adds whatever else the exercise turns out to need.
+  echo "→ No requirements.txt (clean build repo) — installing the base: boto3, python-dotenv..."
+  if ! pip install --disable-pip-version-check boto3 python-dotenv; then
+    echo "✗ pip install failed (see the pip output above for the exact reason)."
+    echo "  No internet / behind a proxy? Set HTTPS_PROXY and re-source."
+    return 1
+  fi
+  echo "✓ Base dependencies installed (boto3, python-dotenv)."
 fi
 
 # --- 4. Bedrock smoke test (FINAL STEP — do not add checks after this) ------
